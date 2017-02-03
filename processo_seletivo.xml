@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>Processos Seletivos component ...</description>
 	
@@ -27,7 +27,9 @@
 		in this section are copied from /site/ in the package -->
 	<files folder="site">
 		<filename>index.html</filename>
-		<filename>cursos.php</filename>
+		<filename>curso.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
 	</files>
  
 	<administration>
@@ -40,7 +42,7 @@
 		<files folder="admin">
 			<!-- Admin Main File Copy Section -->
 			<filename>index.html</filename>
-			<filename>cursos.php</filename>
+			<filename>curso.php</filename>
 			<!-- SQL files section -->
 			<folder>sql</folder>
 		</files>

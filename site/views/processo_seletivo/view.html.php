@@ -7,7 +7,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class ProcessoSeletivoViewProcessoSeletivo extends JViewLegacy
+class CursoView extends JViewLegacy
 {
 	/**
 	 * Display the Hello World view
@@ -19,15 +19,8 @@ class ProcessoSeletivoViewProcessoSeletivo extends JViewLegacy
 	function display($tpl = null)
 	{
 		// Assign data to the view
-		$this->msg = $this->get('Cpf');
- 
-		// Check for errors.
-		if (count($errors = $this->get('Errors')))
-		{
-			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
- 
-			return false;
-		}
+		// Assign data to the view
+		$this->msg = 'Hello World';
  
 		// Display the view
 		parent::display($tpl);
