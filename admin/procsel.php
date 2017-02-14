@@ -4,7 +4,7 @@
 	<head>
 	</head>
 	<body>
-		echo "Cursos Administrador";
+		echo "Processos Seletivos Administrador";
 	</body>
 	</html>
 
