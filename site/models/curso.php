@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class CursoModel extends JModelItem
+class ProcSelModelCurso extends JModelItem
 {
 	/**
 	 * @var string message
@@ -30,9 +30,21 @@ class CursoModel extends JModelItem
 	 */
 	public function getNome()
 	{
-		if (!isset($this->message))
+		if (!isset($this->nome_curso))
 		{
-			$this->nome_curso = 'Hello World!';
+			$jinput = JFactory::getApplication()->input;
+			$id     = $jinput->get('id', 1, 'INT');
+ 
+			switch ($id)
+			{
+				case 2:
+					$this->nome_curso = 'cURSO A';
+					break;
+				default:
+				case 1:
+					$this->nome_curso = 'cURSO N';
+					break;
+			}
 		}
  
 		return $this->nome_curso;

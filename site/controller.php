@@ -6,7 +6,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class CursoController extends JControllerLegacy
+class ProcSelController extends JControllerLegacy
 {
 }
 
