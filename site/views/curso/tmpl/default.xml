@@ -6,7 +6,7 @@
 	<fields name="request">
 		<fieldset name="request">
 			<field
-					name="id"
+					name="cod_curso"
 					type="list"
 					label="COM_PROCSEL_CURSO_FIELD_NOMECURSO_LABEL"
 					description="COM_PROCSEL_CURSO_FIELD_NOMECURSO_DESC"

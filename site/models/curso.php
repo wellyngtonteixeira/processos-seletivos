@@ -33,16 +33,16 @@ class ProcSelModelCurso extends JModelItem
 		if (!isset($this->nome_curso))
 		{
 			$jinput = JFactory::getApplication()->input;
-			$id     = $jinput->get('id', 1, 'INT');
+			$cod_curso     = $jinput->get('cod_curso', 1, 'INT');
  
-			switch ($id)
+			switch ($cod_curso)
 			{
 				case 2:
-					$this->nome_curso = 'cURSO A';
+					$this->nome_curso = 'cURSO B';
 					break;
 				default:
 				case 1:
-					$this->nome_curso = 'cURSO N';
+					$this->nome_curso = 'cURSO A';
 					break;
 			}
 		}
