@@ -23,30 +23,40 @@ class ProcSelModelCurso extends JModelItem
 	protected $cod_curso;
 	protected $nome_curso;
  
+	
+	public function getTable($type = 'Curso', $prefix = 'ProcSelTable', $config = array())
+	{
+		return JTable::getInstance($type, $prefix, $config);
+	}
+
 	/**
 	 * Get the message
          *
 	 * @return  string  The message to be displayed to the user
 	 */
-	public function getNome()
+	public function getNome($cod_curso = '')
 	{
-		if (!isset($this->nome_curso))
+		if (!is_array($this->nome_curso))
 		{
-			$jinput = JFactory::getApplication()->input;
-			$cod_curso     = $jinput->get('cod_curso', 1, 'INT');
- 
-			switch ($cod_curso)
-			{
-				case 2:
-					$this->nome_curso = 'cURSO B';
-					break;
-				default:
-				case 1:
-					$this->nome_curso = 'cURSO A';
-					break;
-			}
+			$this->nome_curso = array();
 		}
  
-		return $this->nome_curso;
+		if (!isset($this->nome_curso[$cod_curso]))
+		{
+			// Request the selected id
+			$jinput = JFactory::getApplication()->input;
+			$cod_curso = $jinput->get('cod_curso', '', 'STRING');
+ 
+			// Get a TableHelloWorld instance
+			$table = $this->getTable();
+ 
+			// Load the message
+			$table->load($cod_curso);
+ 
+			// Assign the message
+			$this->nome_curso[$cod_curso] = $table->nome_curso;
+		}
+ 
+		return $this->nome_curso[$cod_curso];
 	}
 }

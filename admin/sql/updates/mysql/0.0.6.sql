@@ -1,16 +1,23 @@
- /*
 DROP TABLE IF EXISTS `#__procSeletivo`;
 
 CREATE TABLE `#__procSeletivo` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-	`nome` VARCHAR(25) NOT NULL,
-	`semestre` tinyint(2) NOT NULL,
-	`ano` tinyint(4) NOT NULL,
+	`nome` VARCHAR(200) NOT NULL,
 	`status` VARCHAR(11) NOT NULL,
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM
 	AUTO_INCREMENT =0
+	DEFAULT CHARSET =utf8;
+
+DROP TABLE IF EXISTS `#__curso`;
+	
+CREATE TABLE `#__curso` (
+	`cod_curso`       VARCHAR(20)     NOT NULL,
+	`nome_curso` VARCHAR(150) NOT NULL,
+	PRIMARY KEY (`cod_curso`)
+)
+	ENGINE=MyISAM
 	DEFAULT CHARSET =utf8;
 
 DROP TABLE IF EXISTS `#__procSeletivoCurso`;
@@ -54,17 +61,8 @@ CREATE TABLE `#__inscricao` (
 	ENGINE =MyISAM
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
-	
-DROP TABLE IF EXISTS `#__curso`;
-	
-CREATE TABLE `#__curso` (
-	`cod_curso`       VARCHAR(20)     NOT NULL,
-	`nome_curso` VARCHAR(150) NOT NULL,
-	PRIMARY KEY (`cod_curso`)
-)
-	ENGINE=MyISAM
-	DEFAULT CHARSET =utf8;
- 
+
+
 INSERT INTO `#__curso` (`cod_curso`, `nome_curso`) VALUES
 ('GP01', 'ESPECIALIZAÇÃO LATO SENSU EM EaD EM GESTÃO PÚBLICA - Araguaína'),
 ('GS01', 'ESPECIALIZAÇÃO LATO SENSUEM EaD EM GESTÃO PÚBLICA EM SAÚDE - Araguaína'),
@@ -75,16 +73,5 @@ INSERT INTO `#__curso` (`cod_curso`, `nome_curso`) VALUES
 ('GS03', 'ESPECIALIZAÇÃO LATO SENSUEM EaD EM GESTÃO PÚBLICA EM SAÚDE - Palmas')
 ;
 
-INSERT INTO `#__procSeletivo` (`nome`, `ano`, `semestre`, `status`) VALUES
-('ESPECIALIZAÇÕES EAD 2017/1', 2017, 1, 'aberto');
-;
-/*
-INSERT INTO `#__procSeletivoCurso` (`processo_seletivo`, `cod_curso`) VALUES
-(1,'GP01'),
-(1,'GS01'),
-(1,'GPM01'),
-(1,'GS02'), 
-(1,'GP02'), 
-(1,'GPM02'),
-(1,'GS03')
-;*/
+INSERT INTO `#__procSeletivo` (`nome`, `status`) VALUES
+('ESPECIALIZAÇÕES EAD 2017/1', 'aberto');

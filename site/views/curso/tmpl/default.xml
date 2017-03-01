@@ -3,17 +3,15 @@
 	<layout title="COM_PROCSEL_CURSO_VIEW_DEFAULT_TITLE">
 		<message>COM_PROCSEL_CURSO_VIEW_DEFAULT_DESC</message>
 	</layout>
-	<fields name="request">
+	<fields name="request" 
+		addfieldpath="/administrator/components/com_procsel/models/fields">
 		<fieldset name="request">
 			<field
 					name="cod_curso"
-					type="list"
+					type="curso"
 					label="COM_PROCSEL_CURSO_FIELD_NOMECURSO_LABEL"
 					description="COM_PROCSEL_CURSO_FIELD_NOMECURSO_DESC"
-					default="1">
-                                <option value="1">cURSO A</option>
-                                <option value="2">cURSO N</option>
-                        </field>
+					 />
 		</fieldset>
 	</fields>
 </metadata>

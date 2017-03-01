@@ -75,6 +75,3 @@ INSERT INTO `#__curso` (`cod_curso`, `nome_curso`) VALUES
 
 INSERT INTO `#__procSeletivo` (`nome`, `status`) VALUES
 ('ESPECIALIZAÇÕES EAD 2017/1', 'aberto');
-;
-
-;
